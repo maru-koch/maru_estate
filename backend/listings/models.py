@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.timezone import now
 from realtors.models import Realtor
+from django.urls import reverse
 
 class Listing(models.Model):
 
@@ -16,7 +17,7 @@ class Listing(models.Model):
 
     realtors = models.ForeignKey(Realtor, on_delete=models.DO_NOTHING)
     title = models.CharField(max_length=200)
-    slug = models.CharField(max_length=200, unique=True)
+    slug = models.SlugField()
     address = models.CharField(max_length=200)
     city = models.CharField(max_length=200)
     state = models.CharField(max_length=200)
@@ -54,5 +55,8 @@ class Listing(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('listing_detail', kwargs ={'slug': self.slug})
 
     
