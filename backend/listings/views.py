@@ -17,7 +17,7 @@ class ListingDetailView(RetrieveAPIView):
     serializer_class = ListingDetailSerializer
     queryset = Listing.objects.all()
 
-class SearchListing(APIView):
+class SearchListingView(APIView):
     serializer_class = ListingSerializer
     permissions_classes = (permissions.AllowAny,)
 
@@ -97,7 +97,7 @@ class SearchListing(APIView):
             queryset = queryset.filter(sqft__gte =sqft)
         
         # used 'days_listed' as key not list_day
-        days_passed = data['list_day']
+        days_passed = data['days_listed']
 
         if days_passed == "1 or less":
             days_passed = 1
@@ -180,3 +180,14 @@ class SearchListing(APIView):
             if count < has_photos:
                 slug = query.slug
                 queryset = queryset.exclude(slug__iexact = slug)
+
+        open_house = data['open_house']
+        queryset = queryset.filter(open_house__iexact = open_house)
+
+        keywords = data['keywords']
+        queryset = queryset.filter(description__icontains = keywords)
+
+        serializer = ListingSerializer(queryset, many = True)
+
+        return Response(serializer.data)
+
