@@ -26,14 +26,17 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
+AUTH_USER_MODEL = 'accounts.UserAccount'
 
 # Application definition
 CUSTOM_APP =[
     'corsheaders',
     'rest_framework',
-    'accounts'
+    'accounts',
+    'realtors',
+    'listings'
 ]
 
 INSTALLED_APPS = [
@@ -149,3 +152,4 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 # extending the file size to be uploaded
 FILE_UPLOAD_PERMISSIONS = 0O640
+
