@@ -6,8 +6,8 @@ from django.urls import reverse
 class Listing(models.Model):
 
     class SaleType(models.TextChoices):
-        FOR_SALE = 'for sale'
-        FOR_RENT = "for rent"
+        FOR_SALE = 'For Sale'
+        FOR_RENT = "For Rent"
     
     class HomeType(models.TextChoices):
         House = "House"
@@ -28,7 +28,8 @@ class Listing(models.Model):
     sqft = models.IntegerField()
     bedroom = models.IntegerField()
     bathroom = models.IntegerField()
-    price = models.DecimalField(decimal_places=2, max_digits=10)
+    price = models.IntegerField()
+    open_house = models.BooleanField(default=False)
     photo_main = models.ImageField(upload_to = "photos/%y/%m/%d/")
     photo_1 = models.ImageField(upload_to = "photos/%y/%m/%d/", blank=True)
     photo_2 = models.ImageField(upload_to = "photos/%y/%m/%d/", blank=True)

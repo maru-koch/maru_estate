@@ -36,7 +36,8 @@ CUSTOM_APP =[
     'rest_framework',
     'accounts',
     'realtors',
-    'listings'
+    'listings',
+    'contact',
 ]
 
 INSTALLED_APPS = [

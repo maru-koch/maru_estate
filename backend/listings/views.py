@@ -29,7 +29,6 @@ class SearchListingView(APIView):
         queryset = queryset.filter(sale_type=sale_type)
 
         price = data['price']
-
         if price == '$0+':
             price = 0
         elif price == '$200,000+':
@@ -42,7 +41,7 @@ class SearchListingView(APIView):
             price = 800,000
         elif price == '$1,000,000+':
             price = 1,000,000
-        elif price == 'any':
+        else:
             price = -1
 
         if price != -1:
