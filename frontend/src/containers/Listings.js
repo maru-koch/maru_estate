@@ -1,8 +1,10 @@
 
 const Listing =()=>{
-    return <div>
-
+    return (
+    <div>
+        <h1>Property Listing</h1>
     </div>
+    )
 }
 
 export default Listing
