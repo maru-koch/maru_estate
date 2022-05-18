@@ -1,0 +1,17 @@
+
+.header{
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100vw;
+}
+
+.header h1{
+    color: var(--color);
+}
+
+
+
+
