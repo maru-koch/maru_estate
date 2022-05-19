@@ -14,13 +14,13 @@ class ContactCreateView(APIView):
         
         data = self.request.data
         subject = data['subject']
-        message = '\ndear ' + data['name'] +'\n' + data['message']
+        message = '\ndear ' + data['name'] +'\n\n' + data['message']
         email = data['email']
         name = data['name']
 
         if subject and message and email and name:
             try:
-                send_mail(subject, message, 'marukoch.ng', [email], fail_silently=  False)
+                send_mail(subject, message, 'marukoch.ng', ['marukoch.ng@gmail.com'], fail_silently=  False)
                 contact = Contact(name = name, subject = subject, email = email, message = message)
                 contact.save()
                 return Response({'success':'message sent successfully'})

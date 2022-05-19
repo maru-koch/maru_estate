@@ -15,6 +15,7 @@ class ListingView(ListAPIView):
      
 class ListingDetailView(RetrieveAPIView):
     serializer_class = ListingDetailSerializer
+    permission_classes = (permissions.AllowAny,)
     queryset = Listing.objects.all()
 
 class SearchListingView(APIView):
