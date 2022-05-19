@@ -1,8 +1,9 @@
 
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import {Nav, Navbar} from "react-bootstrap";
 import classes from './navHeader.module.css'
 import { logout } from '../reducers/authReducer'
+import { useState, useEffect } from 'react'
 import './nav.css'
 
 
@@ -11,8 +12,14 @@ import './nav.css'
 // Used in Header component
 // comprises of the title, the Navigation links, and the order or purchase button
 
-const NavLink = (props)=>{
-    const {isLoggedIn} = useSelector(state => state.auth);
+const NavLink = ({isAuthenticated})=>{
+
+    const dispatch = useDispatch()
+
+    const logoutHandler = () =>{
+        dispatch(logout());
+    }
+
     return (
         <Navbar collapseOnSelect expand="lg" className ={`${classes.header}`}>
             <Navbar.Brand href="/">
@@ -25,9 +32,9 @@ const NavLink = (props)=>{
                             <Nav.Link className = {classes.link}  href = 'listing'><p>Properties</p></Nav.Link>
                         </Nav>
                         <Nav>
-                            {isLoggedIn? 
+                            {isAuthenticated? 
                             <Nav>
-                                <Nav.Link className = {classes.link} onClick ={logout}><p>Log out</p></Nav.Link>
+                                <Nav.Link className = {classes.link} onClick ={logoutHandler}><p>Log out</p></Nav.Link>
                             </Nav>:
                             <Nav>
                                 <Nav.Link className = {classes.link}  href = "login"><p>Log in</p></Nav.Link>

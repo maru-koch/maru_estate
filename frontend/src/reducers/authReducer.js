@@ -15,7 +15,8 @@ const authSlice = createSlice({
 
     reducers:{
         loggedIn: (state, action)=>{
-            localStorage.setItem('token', action.payload.access);
+            const access_token = action.payload.access;
+            localStorage.setItem('token', access_token);
             state.isAuthenticated = true;
             state.loading = false;
             state.token = action.payload.access
@@ -28,8 +29,10 @@ const authSlice = createSlice({
         },
 
         logout: (state, action)=>{
-            localStorage.setItem('token', '');
+            localStorage.removeItem('token');
             state.isAuthenticated = false;
+            state.token = null;
+            console.log(state.token)
         },
 
         signup:(state, action)=>{
@@ -45,5 +48,5 @@ const authSlice = createSlice({
   }  
 )
 
-export const {login, logout, changeText} = authSlice.actions
+export const {loggedIn, logout, changeText} = authSlice.actions
 export default authSlice.reducer

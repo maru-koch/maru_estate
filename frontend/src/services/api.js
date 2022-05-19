@@ -1,34 +1,23 @@
 import axios from 'axios';
 
- const config ={
-        header:{'Content-Type': 'application/json'}
-    }
+ 
+export const login_api = async (formData) => {
 
-const BASE_URL = "http://localhost:8000"
-
-
-export const login = async (email, password) => {
-
-    const url = BASE_URL + "/api/token/";
-    const body = JSON.stringify({email, password})
-
+    const url = "http://localhost:8000/api/token/";
     try{
-        const res = await axios.post(url, body, config)
-        const payload = res.data
-
-        return payload
+        const data = await axios.post(url, formData)
+        return data
 
     }catch(err){
         console.log(err)
     }
 }
 
-export const signup = async (name, email, password_1, password_2)=>{
-  
-    const url = BASE_URL + "/api/accounts/signup/"
-    const body = JSON.stringify({name, email, password_1, password_2})
+export const signup_api = async (formData)=>{
+
+    const url = "http://localhost:8000/api/accounts/signup/"
     try{
-        const response = await axios.post(url, body, config)
+        const response = await axios.post(url, formData);
         return response.data
 
     }catch(err){
@@ -38,10 +27,11 @@ export const signup = async (name, email, password_1, password_2)=>{
 
 export const listing = async ()=>{
 
-    const url = BASE_URL + "api/listings/"
+    const url = "http://localhost:8000/api/listings/"
     try{
-        const res = await axios.get(url, config)
-        return res
+        const res = await axios.get(url)
+        const data = res.data.results 
+        return data
 
     }catch(err){
         console.log(err)
