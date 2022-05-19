@@ -14,7 +14,6 @@ class Listing(models.Model):
         Condo = "Condo"
         TownHouse = "Town House"
 
-
     realtors = models.ForeignKey(Realtor, on_delete=models.DO_NOTHING)
     title = models.CharField(max_length=200)
     slug = models.SlugField()

@@ -14,12 +14,13 @@ class SignUpView(APIView):
     permission_classes = (permissions.AllowAny,)
 
     def post(self, request, format = None):
+        
         data = self.request.data
         name = data['name']
-        email = data['email']
-        password1 = data['password1']
-        password2 = data['password2']
-
+        email = self.new_method(data)
+        password1 = data['password_1']
+        password2 = data['password_2']
+     
         if password1 == password2:
             if User.objects.filter(email=email).exists():
                 return Response({'error': 'Email already exists'})
@@ -27,8 +28,13 @@ class SignUpView(APIView):
                 if len(password1) < 6:
                     return Response({'error': 'Password must be at least 6 characters'})
                 else:
+
                     user = User.objects.create_user(email = email, name = name, password = password1)
                     user.save()
                     return Response({'success':'Account successfully created'})
         else:
             return Response({'error':'password does not match'})
+
+    def new_method(self, data):
+        email = data['email']
+        return email

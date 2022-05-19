@@ -5,6 +5,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import Contact
 
+
 class ContactCreateView(APIView):
     serializer_class = ContactSerializer
     permission_classes = (permissions.AllowAny,)
