@@ -1,0 +1,25 @@
+
+.card{
+    width: 25vw;
+    display:grid;
+    height: 70%;
+    place-items: center;
+    grid-template-rows: 5fr 3fr 2fr;
+    background-color: var(--main-color);
+}
+
+.card i{
+    font-size: 5rem;
+    color: var(--main-2-color);
+    margin-bottom: 10px;
+}
+
+.card h3{
+    font-size: 1.22rem;
+    margin: 0;
+    color: var(--word)
+}
+.card p{
+    margin:0;
+    color: var(--word)
+}

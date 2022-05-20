@@ -22,7 +22,7 @@ const NavLink = ({isAuthenticated})=>{
         <Navbar collapseOnSelect expand="lg" className ="navBar">
             <Container className = "navContainer">
                 <Navbar.Brand href="/">
-                    <h1>Lettera</h1>
+                    <h1 className ="logo">Lettera</h1>
                 </Navbar.Brand>
                 <Navbar.Collapse id="responsive-navbar-nav" className = "rightNav">
                     <Nav className="nav">

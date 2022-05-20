@@ -1,7 +1,18 @@
 .navBar{
     width: 100vw;
+    position:absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    padding: 20px;
 }
-
+.navContainer .logo{
+    color:#fff;
+    text-decoration: none;
+    margin-left: 20px;
+    
+}
 .navContainer, .nav,.links{
     display: flex;
     margin: 0 40px;
@@ -10,11 +21,9 @@
 
 .nav .link{
     margin: 0 15px;
-}
-
-.nav .link{
     text-decoration: none;
     font-size: 1.2rem;
+    color: var(--footer-color)
 }
 
 .menu .link{

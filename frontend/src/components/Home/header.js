@@ -11,11 +11,14 @@ const Header=()=>{
             </div>
             <div className="header__container">
                 <div className="header__heading">
-                    <h1>Real Estate Properties</h1>
-                    <p>Buy, Sell, Lease Lands and Properties</p>
+                    {/* <h2>Real Estate Properties</h2>
+                    <p>Buy, Sell, Lease Lands and Properties</p> */}
+                     <img src = "./land_lord.jpg" alt ="property_owner"/>
                 </div>
                 <div className="header__photo">
-                    <img src = "./land_lord.jpg" alt ="property_owner"/>
+                    {/* <img src = "./land_lord.jpg" alt ="property_owner"/> */}
+                    <h2>Real Estate Properties</h2>
+                    <p>Buy, Sell, Lease Lands and Properties</p>
                 </div>
             </div>
         </section>

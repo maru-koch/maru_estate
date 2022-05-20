@@ -1,7 +1,7 @@
 
 import NavBar from '../components/Nav/Nav'
 import Footer from '../components/Footer/Footer'
-
+import './layout.css'
 
 
 const Layout =(props)=>{
@@ -11,10 +11,10 @@ const Layout =(props)=>{
     // false -> display login and sign up
 
     return (
-        <div>
+        <div className = 'layout'>
             <NavBar isAuthenticated = {props.isAuthenticated}/>
             {props.children}
-            <Footer/>
+            {/* <Footer/> */}
         </div>
     )
 }

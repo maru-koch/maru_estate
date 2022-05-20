@@ -1,0 +1,25 @@
+
+
+.catalogue{
+    background-color: var(--body-color);
+    width: 70vw;
+    height: 100%;
+    margin-right: 20px;
+    padding: 20px 10px;
+    overflow: auto;
+}
+
+.mealList{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    list-style: none;
+}
+
+@media(max-width:1000px){
+    .catalogue{
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+    }
+}
+    
