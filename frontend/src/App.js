@@ -8,23 +8,46 @@ import Listing from '../src/containers/Listings'
 import Signup from '../src/containers/Signup'
 import Login from '../src/containers/Login'
 import ErrorPage from '../src/containers/errorPage'
+import Dashboard from '../src/containers/dashboard'
+import { useEffect, useState } from 'react';
 import Layout from './layout/Layout'
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import {useSelector } from 'react-redux'
 
 function App() {
+
+    const {token} = useSelector(state => state.auth)
+    const [isAuthenticated, setIsAuthenticated] = useState(false)
+
+    useEffect(() => {
+        if (token){
+        setIsAuthenticated(true)
+    }else{
+        setIsAuthenticated(false)
+    }
+    }, [token])
+    
   return (
-      <Layout>
+      <Layout isAuthenticated = {isAuthenticated}>
           <Router>
-              <Routes>
+              {isAuthenticated?
+               <Routes>
+                   <Route path ="/dashboard" element = {<Dashboard/>}/>
+                   <Route path ="/listings" element = {<Listing/>}/>
+                   <Route path = "/listings/:id" element = {<ListingDetail/>}/>
+               </Routes>
+               :
+                <Routes>
                   <Route path ="/" element = {<Home/>}/>
                   <Route path ="/about" element = {<About/>}/>
                   <Route path ="/contact" element = {<Contact/>}/>
                   <Route path ="/listing" element = {<Listing/>}/>
-                  <Route path ="/listing-detail/:property" element = {<ListingDetail/>}/>
+                  <Route path = "/listings/:id" element = {<ListingDetail/>}/>
                   <Route path ="signup" element = {<Signup/>}/>
-                  <Route path ="/Login" element = {<Login/>}/>
+                  <Route path ="/login" element = {<Login/>}/>
                   <Route path ="*" element = {<ErrorPage/>}/>
               </Routes>
+              }
           </Router>
       </Layout>
   );

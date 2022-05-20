@@ -3,7 +3,7 @@ import {useState} from 'react'
 import {Link} from 'react-router-dom'
 import { signup_api } from '../services/api'
 import {Form, Button, Alert} from 'react-bootstrap'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate} from 'react-router-dom'
 
 
  
@@ -38,13 +38,16 @@ const Signup =()=>{
         // redirect
         
         const response = await signup_api(formData);
+
         if(response?.success){
             setAlert('success')
             setResponse(response.success)
+
             // if successful, navigate to login page after 3 seconds
             setTimeout(() => {
-                navigate('login')
-            }, 3000)
+               navigate("/login")
+            }, 1000)
+
         }else{
             setAlert('danger')
             setResponse(response.error)
@@ -91,7 +94,7 @@ const Signup =()=>{
             </Button>
         </Form>
         <div>
-            <p>Already have an account?<Link to ="login">Login</Link></p>
+            <p>Already have an account?<Link to ="/login">Login</Link></p>
         </div>
     </div>
     )

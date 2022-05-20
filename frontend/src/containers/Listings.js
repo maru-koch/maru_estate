@@ -1,5 +1,7 @@
 import { useState, useEffect} from 'react'
 import { listing } from '../services/api'
+import {Link} from 'react-router-dom'
+
 
 
 const Listing = ()=>{
@@ -28,7 +30,7 @@ const Listing = ()=>{
         { listings.map((listing, idx)=>(
             <div key = {idx}>
                 <img src = {listing.photo_main} alt = {listing.title}/>
-                <h1>{listing.title}</h1>
+                <Link to = {`/listings/${listing.id}`}><h1>{listing.title}</h1></Link>
                 <p>{listing.address}</p>
                 <p>{listing.city}</p>
                 <p>{listing.state}</p>

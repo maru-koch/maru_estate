@@ -23,7 +23,7 @@ const Login =()=>{
 
     if (isAuthenticated) {
         // if user is authenticated, go to the home page
-        navigate('/')
+        navigate('/dashboard')
     }
 
     const onChangeHandler =(event)=>{
@@ -43,6 +43,12 @@ const Login =()=>{
         // the login action in the auth reducer
         
         const response = await login_api(formData);
+
+        if (response.status === '200'){
+            console.log(response.status)
+        }
+       
+
         const access_token = response.data.access;
         const refresh_token = response.data.refresh
         const payload = {
@@ -83,7 +89,7 @@ const Login =()=>{
             </Button>
         </Form>
         <div>
-            <p>Don't have an account <Link to ="signup">Register</Link></p>
+            <p>Don't have an account <Link to ="/signup">Register</Link></p>
         </div>
     </div>
     )
