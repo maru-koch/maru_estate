@@ -1,0 +1,31 @@
+
+.search{
+    border-radius: 5px;
+    width: 100%;
+    padding: 5px 10px;
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+    border: 2px solid var(--vendor-color);
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+
+.search i{
+    font-size: 1.2rem;
+    color: var(--word-dark);
+    margin: 0 10px;
+}
+
+select{
+    padding: 5px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border:0
+}
+
+select:focus{
+    outline: none;
+}

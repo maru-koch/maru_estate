@@ -1,8 +1,9 @@
 
 import { useDispatch } from 'react-redux'
-import {Nav, Navbar, Container} from "react-bootstrap";
+import {Nav, Navbar, Container, Figure} from "react-bootstrap";
 import { logout } from '../../reducers/authReducer'
 import './nav.css'
+import Logo from '../../assets/images/logo.png'
 
 
 
@@ -21,8 +22,8 @@ const NavLink = ({isAuthenticated})=>{
     return (
         <Navbar collapseOnSelect expand="lg" className ="navBar">
             <Container className = "navContainer">
-                <Navbar.Brand href="/">
-                    <h1 className ="logo">Lettera</h1>
+                <Navbar.Brand href="/" className = "logo">
+                   <Figure><Figure.Image src ={Logo} width={300} height={50}/></Figure>
                 </Navbar.Brand>
                 <Navbar.Collapse id="responsive-navbar-nav" className = "rightNav">
                     <Nav className="nav">
@@ -43,7 +44,7 @@ const NavLink = ({isAuthenticated})=>{
                             <Nav>
                                 <Nav.Link className = "link"  onClick ={logoutHandler} href = "/"><p>Log out</p></Nav.Link>
                             </Nav>:
-                            <Nav className = "links">
+                            <Nav className = "links login">
                                 <Nav.Link className = "link"   href = "login"><p>Log in</p></Nav.Link>
                                 <Nav.Link className = "link"   href = "signup"><p>Sign up</p></Nav.Link>
                             </Nav>}

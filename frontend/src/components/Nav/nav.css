@@ -1,12 +1,8 @@
 .navBar{
     width: 100vw;
-    position:absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 2;
-    padding: 20px;
+    height: 70px;
 }
+
 .navContainer .logo{
     color:#fff;
     text-decoration: none;
@@ -20,16 +16,22 @@
 }
 
 .nav .link{
-    margin: 0 15px;
+    margin: 0 20px;
     text-decoration: none;
-    font-size: 1.2rem;
-    color: var(--footer-color)
+    font-size: 1rem;
+    color: var(--footer-color);
+    font-family: Poppins;
 }
 
 .menu .link{
     margin: 0 40px;
     font-style: bold;
+    font-size: 1.2rem;
 }
+
+
+
+
 
 
 

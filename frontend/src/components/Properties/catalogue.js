@@ -1,4 +1,4 @@
-import MealItem from "./mealItem"
+import Property from "./property"
 
 import classes from './catalogue.module.css'
 import SectionContainer from "../../UI/section-container"
@@ -10,7 +10,7 @@ const Catalogue =()=>{
         <SectionContainer>
             <div class ={classes.catalogue}>
                 <ul class ={classes.mealList}>
-                    {menuItems.map(meal =><MealItem meal = {meal} key = {meal.id}/>)}
+                    {menuItems.map(meal =><Property meal = {meal} key = {meal.id}/>)}
                 </ul>
             </div>
         </SectionContainer>

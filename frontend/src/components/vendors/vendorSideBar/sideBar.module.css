@@ -1,0 +1,51 @@
+
+.sideBar{
+    height:100vh;
+    width: 20vW;
+    margin-left:50px;
+
+}
+
+.sideBar h1{
+    text-align: left;
+}
+
+.sideBar ul{
+    list-style: none;
+}
+
+.sideBar ul li{
+    font-size: 1.2rem;
+    font-weight: normal;
+    font-family: Poppins;
+    line-height: 2.5rem;
+    padding-left: 20px;
+    color: var(--word)
+}
+
+.sideBar ul li:hover{
+    border-left: 6px solid var(--btn-border-color);
+    cursor: pointer;
+    
+}
+
+.progressBar{
+    position: sticky;
+    top: 0;
+}
+
+@media(max-width:1000px) {
+
+    .sideBar{
+        position: relative;
+        width: 100%;
+        background-color: rgb(243, 240, 240);
+        height: 50px;
+        display: none;
+    }
+
+    .sideBar h1{
+        display: none;
+    } 
+}
+

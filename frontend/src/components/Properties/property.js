@@ -3,7 +3,7 @@ import Card from '../../UI/card'
 import { addItem } from '../../../features/cart/cart';
 import {useDispatch} from 'react-redux'
 
-const MealItem = props =>{
+const Property = props =>{
     const price = `$ ${props.meal.price.toFixed(2)}`;
     const dispatch = useDispatch()
     // A template to show a single meal
@@ -34,10 +34,10 @@ const MealItem = props =>{
                     </div>
                 </div>
                 <div class ={classes.selection}>
-                    <button class = {classes.btn_select} onClick ={()=>addItemHandler()}>Add to Cart</button>
+                    <button class = {classes.btn_select} onClick ={()=>addItemHandler()}>View Details</button>
                 </div>
             </Card>
         </li>
     )
 }
-export default MealItem
+export default Property

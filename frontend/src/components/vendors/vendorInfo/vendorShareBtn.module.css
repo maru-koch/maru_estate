@@ -1,0 +1,20 @@
+
+.vendorShareBtn{
+    height: 100%;
+}
+.btn{
+    border:0;
+    padding: 5px 20px;
+    background-color: var(--accent-3-color);
+    color: var(--color);
+    border-radius:5px;
+    margin-left: 10px;
+}
+
+.btn i{
+    font-size: 1.2rem;
+}
+
+.btn span{
+    margin: 0 5px;
+}

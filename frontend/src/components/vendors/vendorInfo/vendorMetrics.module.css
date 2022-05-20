@@ -1,0 +1,21 @@
+
+.metricsHolder{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.metricsHolder h5{
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: Poppins;
+    color: var(--footer-color)
+}
+
+.metricsHolder p{
+    font-size: 0.8rem;
+    font-family: Poppins;
+    font-weight: 100;
+    margin: 0;
+    padding:0;
+}

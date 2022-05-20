@@ -1,0 +1,28 @@
+/* in vendor address component*/
+
+.error,.address{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: Poppins;
+    font-weight: 100;
+}
+
+.address p{
+    font-family: Poppins;
+    font-weight: 200;
+    font-size: 0.9rem;
+    margin-left: 10px;
+    padding-top: 5px;
+}
+.error{
+    padding-top: 20px;
+}
+.error p, .error i{
+    color: red;
+}
+
+.error p{
+    margin-left: 10px;
+}
+
