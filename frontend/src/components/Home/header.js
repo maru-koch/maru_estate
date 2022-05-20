@@ -13,8 +13,8 @@ const Header=()=>{
                     <div className={classes.header__panel}>
                         <div>
                             <h2>Real Estate Properties</h2>
-                            <p>Buy, Sell, Lease Lands and Properties</p>
-                            <p>Nothing in the world</p>
+                            <p>Buy, Sell, Lease, and manage your Properties</p>
+                            <button>View Properties</button>
                         </div>
                     </div>
                     <div className={classes.header__panel}>

@@ -45,11 +45,20 @@ section{
     background-size: cover;
     background-attachment: fixed;
 }
+.header__panel {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-size: cover;
+    display: grid;
+    place-items: center;
+}
 
 .header__panel h2{
     font-size: 2.5rem;
     color: #3F8462;
     padding: 0;
+    margin: 0;
     font-family: Poppins;
     font-weight: 600;
 }
@@ -58,17 +67,25 @@ section{
     font-size: 1.2rem;
     color: #62C371;
     font-family: Poppins;
+    margin: 0;
+    padding: 0;
     font-weight: 600;
 }
 
-.header__panel{
+.header__panel button{
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    background-size: cover;
-    background-color: black;
-    display:grid;
-    place-items: center;
+    padding:20px;
+    border-radius: 20px;
+    border: 0;
+    outline: 0;
+    font-family: "Poppins";
+    background-image: var(--gradient);
+    color: var(--main-2-color);
+    font-size: 1.2rem;
+    font-family: Poppins;
+    font-weight: 200;
+    margin: 40px 0;
+
 }
 
 .header__img{
