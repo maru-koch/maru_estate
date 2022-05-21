@@ -1,6 +1,7 @@
 .navBar{
     width: 100vw;
     height: 70px;
+    background-color: var(--background-2-color)
 }
 
 .navContainer .logo{
@@ -28,6 +29,8 @@
     font-style: bold;
     font-size: 1.2rem;
 }
+
+
 
 
 

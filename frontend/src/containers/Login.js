@@ -4,9 +4,11 @@ import {connect} from 'react-redux'
 import {useSelector, useDispatch} from 'react-redux'
 import { login_api } from '../services/api'
 import { loggedIn } from '../reducers/authReducer'
-import {Form, Button} from 'react-bootstrap'
+import {Form, Button, Alert} from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 import PropTypes from 'prop-types'
+
+import classes from '../components/Login/login.module.css'
  
 
 const Login =()=>{
@@ -14,6 +16,8 @@ const Login =()=>{
     const navigate = useNavigate() // to redirect on authentication
 
     const [formData, setFormData] = useState({email: '', password: ''})
+    const [alert, setAlert] = useState('')
+    const [response, setResponse] = useState('')
 
     const {isAuthenticated} = useSelector(state =>state.auth)
 
@@ -42,15 +46,20 @@ const Login =()=>{
         // if successful, send the access and the refresh token to the store through
         // the login action in the auth reducer
         
-        const response = await login_api(formData);
-
-        if (response.status === '200'){
-            console.log(response.status)
+        const res = await login_api(formData);
+        console.log('response:', res)
+        if (res){
+            setAlert('success')
+            setResponse(res.success)
+    
+        }else{
+            setAlert('danger')
+            setResponse("Invalid username or password")
         }
        
+        const access_token = res.data.access;
+        const refresh_token = res.data.refresh
 
-        const access_token = response.data.access;
-        const refresh_token = response.data.refresh
         const payload = {
             access: access_token,
             refresh: refresh_token
@@ -66,32 +75,33 @@ const Login =()=>{
 
    
     return (
-    <div>
-        <h1>Log in</h1>
-        <p>Sign into your account</p>
-        <Form onSubmit ={onSummitHandler}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" name = "email" onChange={onChangeHandler} />
-                <Form.Text className="text-muted">
-                    We'll never share your email with anyone else.
-                </Form.Text>
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" name ="password" onChange ={onChangeHandler}/>
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                <Form.Check type="checkbox" label="Check me out" />
-            </Form.Group>
-            <Button variant="primary" type="submit">
-                Submit
-            </Button>
-        </Form>
-        <div>
-            <p>Don't have an account <Link to ="/signup">Register</Link></p>
+        <div className={classes.container}>
+            <div className={classes.form__wrapper}>
+                <h1>Log in</h1>
+                <p>Sign into your account</p>
+                <Alert key={alert} variant ={alert} className={classes.form__alert}>{response}</Alert>
+                <Form onSubmit ={onSummitHandler} className ={classes.form}>
+                    <Form.Group className={classes.form__group} controlId="formBasicEmail">
+                        <Form.Label className={classes.form__label}>Email address</Form.Label>
+                        <Form.Control className={classes.form__input} type="email" placeholder="Enter email" name = "email" onChange={onChangeHandler} />
+                    </Form.Group>
+                    <Form.Group className={classes.form__group} controlId="formBasicPassword">
+                        <Form.Label className={classes.form__label}>Password</Form.Label>
+                        <Form.Control className={classes.form__input} type="password" placeholder="Password" name ="password" onChange ={onChangeHandler}/>
+                    </Form.Group>
+                    <Form.Group lassName={classes.form__group} controlId="formBasicCheckbox">
+                        <Form.Check className={classes.form__label} type="checkbox" label="Remember my Password" />
+                    </Form.Group>
+                    <Button variant="primary" type="submit" className ={classes.form__btn}>
+                        Submit
+                    </Button>
+                </Form>
+                <div className ={classes.register}>
+                    <p>Don't have an account <Link to ="/signup">Register</Link></p>
+                </div>
+            </div>
         </div>
-    </div>
+    
     )
 }
 

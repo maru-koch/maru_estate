@@ -1,0 +1,84 @@
+
+.footerCard h2{
+    color: var(--color);
+}
+
+
+.footerCard ul{
+    list-style: none;
+    margin-top: 20px;
+}
+
+.footerCard ul li, .footerCard p{
+    text-decoration:none;
+    font-size: 1rem;
+    line-height: 1.8rem;
+    font-family: Poppins;
+    cursor: pointer;
+    color: var(--word-light);
+    font-weight: 200;
+
+}
+
+
+.footerCard .tel{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    font-family: Roboto;
+    letter-spacing: 2px;
+    color: var(--accent-3-color)
+}
+
+.footerCard img {
+    max-width: 400px;
+}
+
+
+
+.footerLinks{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+}
+
+.wrapper {
+    padding: 50px 0px;
+    margin: 0px;
+    background-color: transparent;
+}
+
+@media(max-width:1000px){
+    .wrapper {
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+    .box {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 100px;
+    
+    }
+    .footerCard .tel {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0px;
+        font-family: Roboto;
+        letter-spacing: 2px;
+        margin: 0;
+        padding: 0;
+    }
+    .footerLinks{
+        width: 100%;
+        margin-top: 30px;
+        padding: 0 30px;
+    }
+    .footerCard {
+       justify-self: flex-start;
+    }
+}

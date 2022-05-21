@@ -4,15 +4,17 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px 40px;
+    padding: 40px;
 }
 
 .sectionHeader h2{
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: 400;
     color: var(--title-color);
     font-family: Poppins;
     font-weight: 600;
+    margin: 0;
+    padding: 5px;
 }
 
 .sectionHeader h4{
@@ -21,5 +23,8 @@
     color: var(--subtitle-color);
     color: #62C371;
     font-family: Poppins;
+    font-weight: 200;
+    margin: 0;
+    padding: 0;
 }
 

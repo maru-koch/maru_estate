@@ -1,0 +1,57 @@
+
+
+.container{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+
+.card{
+    height: 400px;
+    width: 49vw;
+    overflow: hidden;
+    box-shadow: transparent;
+}
+
+.cardWrapper{
+    padding: 60px;
+}
+
+.card p{
+    color: var(--word);
+}
+
+.right{
+    background-image: url(../../assets/images/estate_3.jpg);
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    width: 100%;
+    margin: 0;
+}
+
+@media(max-width:1000px){
+    .container{
+        flex-direction: column;
+        justify-content: center;
+        background-color:var(--body-color);
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .card{
+        width: 90vw;
+        margin: 20px;
+        max-width: 850px;
+        height: auto;
+    }
+
+    .cardWrapper{
+        padding: 60px 40px;
+    }
+}

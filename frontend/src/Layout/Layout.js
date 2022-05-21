@@ -1,6 +1,6 @@
 
 import NavBar from '../components/Nav/Nav'
-import Footer from '../components/Footer/Footer'
+import Footer from '../components/Footer/footer'
 import './layout.css'
 
 
@@ -14,7 +14,7 @@ const Layout =(props)=>{
         <div className = 'layout'>
             <NavBar isAuthenticated = {props.isAuthenticated}/>
             {props.children}
-            {/* <Footer/> */}
+            <Footer/>
         </div>
     )
 }
