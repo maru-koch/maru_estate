@@ -1,10 +1,10 @@
 
 .section{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    
 }
 
 @media(max-width:1000px) {

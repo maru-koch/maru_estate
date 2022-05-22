@@ -1,0 +1,67 @@
+
+.card{
+    position: relative;
+    overflow: hidden;
+    box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    width: 25vw;
+}
+
+.cardWrapper{
+    position: relative;
+}
+
+.imgWrapper{
+  height: 200px;
+  padding: 0;
+  margin: 0;
+}
+
+.imgWrapper img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.desc{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding:0 20px;
+    border-bottom: 1px solid grey;
+}
+
+.desc h3{
+    font-family: Poppins;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 0;
+    margin:0;
+}
+
+.desc .address{
+    font-family: Poppins;
+    font-weight: 200;
+    font-size: .8rem;
+}
+.desc .city{
+    font-family: Poppins;
+    font-weight:300;
+    font-size: 1rem;
+    padding: 2;
+    margin: 0;
+}
+
+.card:hover .description{
+    transform: translateY(60px);
+}
+@media(max-width:1000){
+    .card{
+        width: 40vw;
+    }
+
+    
+}
+

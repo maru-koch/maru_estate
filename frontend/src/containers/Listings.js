@@ -1,6 +1,8 @@
 import { useState, useEffect} from 'react'
 import { listing } from '../services/api'
 import {Link} from 'react-router-dom'
+import SectionContainer from '../UI/section-container'
+import SectionWrapper from '../UI/section-wrapper'
 
 
 
@@ -10,11 +12,12 @@ const Listing = ()=>{
     // save it in state variable (getListings)
     // and outputs it on the user interface
 
-    const [listings, getListings] = useState([])
+    const [listings, setListings] = useState([])
+    const [currentPage, setCurrentPage] = useState(1)
 
     const listingHandler = async ()=>{
         const properties = await listing()
-        getListings(properties)
+        setListings(properties)
     }
 
     useEffect(()=>{
@@ -25,18 +28,14 @@ const Listing = ()=>{
 
     return (
     <div>
-        <h1>Property Listing</h1>
-        <button onClick ={listingHandler}>Get listing</button>
-        { listings.map((listing, idx)=>(
-            <div key = {idx}>
-                <img src = {listing.photo_main} alt = {listing.title}/>
-                <Link to = {`/listings/${listing.id}`}><h1>{listing.title}</h1></Link>
-                <p>{listing.address}</p>
-                <p>{listing.city}</p>
-                <p>{listing.state}</p>
-                <p>{listing.price}</p>
-            </div>
-        ))}
+        <Search/>
+        <SearchOptions/>
+        <SectionContainer>
+            <SectionWrapper>
+                <SideBar/>
+                <PropertyListings/>
+            </SectionWrapper>
+        </SectionContainer>
     </div>
     )
 }

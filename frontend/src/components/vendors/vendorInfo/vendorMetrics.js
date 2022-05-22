@@ -6,16 +6,20 @@ const VendorMetrics =()=>{
     return (
         <SectionWrapper style ={classes.metricsHolder}>
             <div className={classes.metrics}>
-                <h5>221</h5>
-                <p>REVIEWS</p>
+                <h5>5</h5>
+                <p>bed</p>
             </div>
             <div className={classes.metrics}>
                 <h5>4.5</h5>
-                <p>Ratings</p>
+                <p>bath</p>
             </div>
             <div className={classes.metrics}>
-                <h5>PAYMENT</h5>
-                <p>ONLINE PAYMENT</p>
+                <h5>2,350</h5>
+                <p>sqft</p>
+            </div>
+            <div className={classes.metrics}>
+                <h5>0.5</h5>
+                <p>acre</p>
             </div>
         </SectionWrapper>
     )

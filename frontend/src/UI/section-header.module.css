@@ -4,7 +4,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 40px;
 }
 
 .sectionHeader h2{
@@ -14,7 +13,6 @@
     font-family: Poppins;
     font-weight: 600;
     margin: 0;
-    padding: 5px;
 }
 
 .sectionHeader h4{

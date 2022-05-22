@@ -1,14 +1,15 @@
 
 
 .container{
-    display:flex;
-    align-items:center;
-    justify-content: space-between;
-    flex-direction: row;
-    gap: 20px;
-    flex-wrap: wrap;
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0px;
 }
 
+.section__wrapper{
+    display: grid;
+    place-items: center;
+}
 
 .card{
     height: 400px;
@@ -20,21 +21,54 @@
 .cardWrapper{
     padding: 60px;
 }
+.cardWrapper p{
+    font-size: 1rem;
+    font-family: Poppins;
+    font-weight: 200;
+    color: grey
+}
+
+.cardWrapper h2{
+    font-size: 2rem;
+    font-family: Poppins; 
+    font-weight: 400;
+    color: grey
+}
 
 .card p{
     color: var(--word);
 }
 
-.right{
-    background-image: url(../../assets/images/estate_3.jpg);
-    height: 500px;
+.right img{ 
     background-repeat: no-repeat;
+    height: 100%;
     background-size: cover;
     object-fit: cover;
     width: 100%;
     margin: 0;
 }
 
+.btn_holder{
+    display: grid;
+    place-items: center;
+}
+
+.btn_holder button{
+    padding: 15px 60px;
+    border: 0;
+    background-color: grey;
+    color:#fff;
+    border-radius: 20px;
+}
+
+.btn_holder button:hover{
+    background-image: var(--gradient);
+}
+
+.btn_holder button:focus{
+    outline:none;
+    cursor: pointer;
+}
 @media(max-width:1000px){
     .container{
         flex-direction: column;

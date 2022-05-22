@@ -1,0 +1,67 @@
+
+.Label {
+    background-color: var(--accent-4-color);
+}
+
+.cartLabel{
+    /* background-color: var(--header-color); */
+    background-color:var(--accent-4-color);
+    display: flex;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 10px 20px;
+    justify-content:space-between;
+    align-items: center;
+    border-top: 1px solid var(--word-light)
+}
+
+.cartLabel .handle{
+    color: var(--color);
+    font-size: 1rem;
+    font-weight: 200;
+    padding: 5px 20px;
+    border-radius: 10%;
+    font-family: Mulish;
+    background-color: var(--accent-2-color);
+}
+
+.cartLabel i{
+    color: var(--accent-2-color);
+    font-size: 20px;
+    text-align: center;
+    margin-top: -10px;
+}
+.price{
+    font-family: Roboto;
+    font-weight: lighter;
+    font-size: 1.4rem;
+    margin-left: 20px;
+    letter-spacing: 1px;
+    padding: 5px;
+}
+
+.name{
+    font-size: 1rem;
+    font-family: Poppins;
+    font-weight: 200;
+}
+
+@media(max-width:1000px) {
+    .name{
+        display: none;
+    }
+    .cartLabel i {
+        display:none;
+    }
+
+    .cartLabel .handle {
+        color: var(--color);
+        font-size: 1rem;
+        font-weight: 200;
+        padding: 5px 20px;
+        width:100%;
+        text-align: center;
+        font-family: Mulish;
+        background-color: var(--accent-2-color);
+    }
+}
+
