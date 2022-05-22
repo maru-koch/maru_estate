@@ -1,25 +1,23 @@
-
-import ListingForm from './listingForm'
-import Pagination from './pagination'
+import { useSelector } from '@reduxjs/toolkit'
 import classes from './propertylisting.module.css'
-import {useState} from 'react';
-
-
+import Loader from 'react-loader-spinner'
 
 const PropertyListings =()=>{
 
-    const [listings, setListings] = useState('');
-    const [currentPage, setCurrentPage] = useState(1);
-    const [listingPerPage, setListingPerPage] = useState(3);
-    const [active, setActive] = useState(1);
+    // this component does nothing but to display the current page listings
+
+    const {loading, pageListings} = useSelector(state => state.listing)
 
     return (
         <main className = "propertyListing">
             <section className = {classes.listing__pagination}>
                 <div className="row">
                     {
-                        
-                        
+                        loading? 
+                        <Loader/>:
+                        <section className ={classes.listing__container}>
+                            {pageListings.map()}
+                        </section>
                     }
                 </div>
             </section>

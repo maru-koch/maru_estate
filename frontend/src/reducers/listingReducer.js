@@ -3,8 +3,9 @@ import {createSlice} from '@reduxjs/toolkit'
 
 const initialState = {
     listings: [],
-    pageListing: [],
-    page: 0
+    pageListings: [],
+    page: 0,
+    loading: false
 }
 
 const listingSlice = createSlice({
@@ -28,9 +29,20 @@ const listingSlice = createSlice({
 
             state.listings = action.payload;
             state.loading = true
+        },
+
+        current_page_listings:(state, action)=>{
+            // get the listing for the current page
+            // push it to the pageListings array in the state
+            // access it throught the PropertyListings component for display
+
+            const page_listings = action.payload.data
+            page_listings.forEach(listing =>{
+                state.pageListings.push(listing)
+            })
         }
     }
 })
 
-export const {getListing} = listingSlice.actions
+export const {getListing, search_listings, current_page_listings} = listingSlice.actions
 export default listingSlice.reducer

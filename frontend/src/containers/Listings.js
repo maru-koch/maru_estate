@@ -1,8 +1,13 @@
 import { useState, useEffect} from 'react'
 import { listing } from '../services/api'
-import {Link} from 'react-router-dom'
 import SectionContainer from '../UI/section-container'
 import SectionWrapper from '../UI/section-wrapper'
+import PropertyListings from '../components/Listing/propertyListing'
+import Pagination from '../components/Listng/pagination'
+import ListingForm from '../components/Listing/listingForm'
+import Search from '../components/Listing/search'
+import SideBar from '../components/Listing/side'
+import classes from '../components/Listing/listing.module.css'
 
 
 
@@ -27,16 +32,21 @@ const Listing = ()=>{
     }, [])
 
     return (
-    <div>
-        <Search/>
-        <SearchOptions/>
+    <main className = {classes.listings__main}>
+        <SectionContainer>
+            <Search/>
+            <ListingForm/>
+        </SectionContainer>
         <SectionContainer>
             <SectionWrapper>
                 <SideBar/>
-                <PropertyListings/>
+                <div className = {classes.listings__property}>
+                    <PropertyListings/>
+                    <Pagination/>
+                </div>
             </SectionWrapper>
         </SectionContainer>
-    </div>
+    </main>
     )
 }
 

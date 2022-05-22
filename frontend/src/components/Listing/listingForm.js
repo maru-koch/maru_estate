@@ -1,6 +1,4 @@
 import {useState} from 'react'
-import loader from 'react-loader-spinner'
-import PropType from 'prop-type'
 import search_api from '../../services/api'
 import {search_listings} from '../../reducers/listingsReducer'
 import {useDispatch} from 'react-redux'
