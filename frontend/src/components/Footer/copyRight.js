@@ -3,8 +3,8 @@ import classes from './copyRight.module.css'
 
 const CopyRight=()=>{
     return (
-        <div class = {classes.container}>
-            <div  class = {classes.wrapper}>
+        <div className = {classes.container}>
+            <div  className = {classes.wrapper}>
                 {/* <div class ={classes.img}>
                     <img src = "" alt="logo"/>
                 </div> */}

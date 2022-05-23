@@ -10,7 +10,7 @@ const FoodCard =props=>{
     // displays image, food name, description, and price
     // user can add to cart
     
-    <Card style = {`${classes.card}`}>
+    <Card style = {`${classes.card} ${props.style}`}>
         <div class = {classes.listingCard}>
             <div class ={classes.imgWrapper}>
                 <img src = {props.image} alt = {props.name}/>
@@ -23,8 +23,8 @@ const FoodCard =props=>{
             <ListingMetrics/>
 
             <div className={classes.desc}>
-                <p p className={classes.address}>{props.address}</p>
-                <p className={classes.city}>{props.city}</p>
+                <p p className={classes.address}>{props.city}</p>
+                <button className={classes.city}>Details</button>
             </div>
         </div>
     </Card>)

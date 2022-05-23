@@ -36,10 +36,10 @@ const listingSlice = createSlice({
             // push it to the pageListings array in the state
             // access it throught the PropertyListings component for display
 
-            const page_listings = action.payload.data
-            page_listings.forEach(listing =>{
-                state.pageListings.push(listing)
-            })
+            // const page_listings = action.payload.data
+            // page_listings.forEach(listing =>{
+            //     state.pageListings.push(listing)
+            // })
         }
     }
 })

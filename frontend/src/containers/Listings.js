@@ -3,10 +3,10 @@ import { listing } from '../services/api'
 import SectionContainer from '../UI/section-container'
 import SectionWrapper from '../UI/section-wrapper'
 import PropertyListings from '../components/Listing/propertyListing'
-import Pagination from '../components/Listng/pagination'
+import Pagination from '../components/Listing/pagination'
 import ListingForm from '../components/Listing/listingForm'
-import Search from '../components/Listing/search'
-import SideBar from '../components/Listing/side'
+import Search from '../components/Listing/searchListing'
+import SideBar from '../components/Listing/sideBar'
 import classes from '../components/Listing/listing.module.css'
 
 
@@ -33,16 +33,15 @@ const Listing = ()=>{
 
     return (
     <main className = {classes.listings__main}>
-        <SectionContainer>
+        <div className ={classes.listings__searchPanel}>
             <Search/>
             <ListingForm/>
-        </SectionContainer>
+        </div>
         <SectionContainer>
-            <SectionWrapper>
+            <SectionWrapper style = {classes.listings__wrapper}>
                 <SideBar/>
                 <div className = {classes.listings__property}>
                     <PropertyListings/>
-                    <Pagination/>
                 </div>
             </SectionWrapper>
         </SectionContainer>

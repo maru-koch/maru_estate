@@ -1,8 +1,9 @@
 import {useState} from 'react'
-import search_api from '../../services/api'
-import {search_listings} from '../../reducers/listingsReducer'
+import {search_api} from '../../services/api'
+import {search_listings} from '../../reducers/listingReducer'
 import {useDispatch} from 'react-redux'
-import {Form, InputGroup, Dropdown, DropdownButton} from 'react-bootstrap'
+import {Form} from 'react-bootstrap'
+import classes from './listingForm.module.css'
 
 const initialState = {
     location:'abuja',
@@ -13,7 +14,7 @@ const initialState = {
     bathrooms : '0+',
 }
 
-const FormListing = ()=>{
+const ListingForm = ()=>{
 
     const [formData, setFormData] = useState(initialState)
     const [loading, setLoading] = useState(false)
@@ -38,46 +39,47 @@ const FormListing = ()=>{
     }
 
     return (
-        <section>
-            <Form onSubmit ={onSummitHandler}>
-                <InputGroup className = "mb-3">
-                    <DropdownButton 
+        <section className={classes.container}>
+            <Form onSubmit ={onSummitHandler} className = {classes.wrapper}>
+                <Form.Group className = {classes.form__group}>
+                    <Form.Select className = {classes.form__select} 
                         name ="location" 
-                        title ="Location" 
-                        variant ="outline-secondary" 
-                        id ="input-group-dropdown-1"
                         onChange = {onChangeHandler}>
-                        <Dropdown.Item>Lagos</Dropdown.Item>
-                        <Dropdown.Item>Abuja</Dropdown.Item>
-                        <Dropdown.Item>Port Harcourt</Dropdown.Item>
-                        <Dropdown.Item>Imo</Dropdown.Item>
-                    </DropdownButton>
-                    <DropdownButton 
+                        <option>Lagos</option>
+                        <option>Abuja</option>
+                        <option>Port Harcourt</option>
+                        <option>Imo</option>
+                    </Form.Select>
+                </Form.Group>
+                <Form.Group className = {classes.form__group}>
+                    <Form.Select className = {classes.form__select}
                         name ="type"
                         title ="Type" 
                         variant ="outline-secondary" 
                         id ="input-group-dropdown-1">
-                        <Dropdown.Item>For Sale</Dropdown.Item>
-                        <Dropdown.Item>For Rent</Dropdown.Item>
-                    </DropdownButton>
-                    <DropdownButton 
+                        <option>For Sale</option>
+                        <option>For Rent</option>
+                    </Form.Select>
+                </Form.Group>
+                <Form.Group className = {classes.form__group}>
+                    <Form.Select className = {classes.form__select}
                         name ="price" 
                         title ="Price Range" 
                         variant ="outline-secondary" 
                         id ="input-group-dropdown-1">
-                        <Dropdown.Item>0k +</Dropdown.Item>
-                        <Dropdown.Item>100k -500k</Dropdown.Item>
-                        <Dropdown.Item>500k - 1M</Dropdown.Item>
-                        <Dropdown.Item>1M - 5M</Dropdown.Item>
-                        <Dropdown.Item>5M - 10M</Dropdown.Item>
-                        <Dropdown.Item>10M - 50M</Dropdown.Item>
-                        <Dropdown.Item>50M - 100M</Dropdown.Item>
-                         <Dropdown.Item>100M +</Dropdown.Item>
-                    </DropdownButton>
-                </InputGroup>
+                        <option>0k +</option>
+                        <option>100k -500k</option>
+                        <option>500k - 1M</option>
+                        <option>1M - 5M</option>
+                        <option>5M - 10M</option>
+                        <option>10M - 50M</option>
+                        <option>50M - 100M</option>
+                         <option>100M +</option>
+                    </Form.Select>
+                </Form.Group>
             </Form>
         </section>
     )
 }
 
-export default FormListing
+export default ListingForm

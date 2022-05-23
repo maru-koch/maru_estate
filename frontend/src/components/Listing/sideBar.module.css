@@ -1,13 +1,50 @@
 
 .sideBar{
-    height:100vh;
-    width: 20vW;
-    margin-left:50px;
+    height:100%;
+    width: 100%;
+    /* background-color: var(--background-color); */
+    position:relative;
+    padding:0;
+    margin: 0;
 
 }
 
-.sideBar h1{
+.topBar{
     text-align: left;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+}
+
+.topBar h1{
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 0px 50px;
+    font-weight: bold;
+    font-family: Poppins;
+}
+
+.sortBy{
+    display:grid;
+    grid-template-columns: 4fr 6fr;
+    place-items: center;
+    background-image: var(--gradient);
+    padding: 0 20px;
+}
+
+.sortBy p{
+    font-size: 1rem;
+    font-family: Mulish;
+    color: #fff;
+}
+
+.sortBy select{
+    width: 100%;
+    height: 100%;
+    font-size: 1rem;
+    font-family: Mulish;
 }
 
 .sideBar ul{
@@ -29,11 +66,23 @@
     
 }
 
-.progressBar{
+.barHolder{
     position: sticky;
-    top: 0;
+    top: -50px;
+    margin-top: 20px;
+    padding-left: 50px;
 }
 
+.bar{
+    display: grid;
+    grid-template-columns: 6fr 4fr;
+    border-bottom: 2px solid var(--subtitle-color);
+}
+
+.bar h3{
+    font-size: 1rem;
+    font-family: Mulish;
+}
 @media(max-width:1000px) {
 
     .sideBar{

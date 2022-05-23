@@ -1,16 +1,27 @@
 
+.container{
+    background-color: var(--background-color);
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
 .wrapper{
-    border: 1px solid var(--color);
+    border: 1px solid var(--main-2-color);
     padding: 10px;
     border-radius: var(--border-radius);
     position: relative;
     overflow: hidden;
+    height: 40px;
+    border-radius: 10px;
+    width: 50vw;
     z-index: 100;
     cursor: pointer;
 }
 
 .wrapper .btn{
-    background-color: var(--btn-color);
+    background-image: var(--gradient);
     color: var(--color);
     outline: one;
     border: 0;
@@ -18,8 +29,11 @@
     top: 0;
     right: 0;
     bottom: 0;
-    width: 100px;
+    width: 150px;
+    font-size: 1rem;
+    font-family: Mulish;
     z-index: 1;
+    color: #fff;
     cursor: pointer;
 }
 
@@ -30,14 +44,21 @@
 }
 
 .wrapper input{
-    background-color: var(--color);
+    background-color: white;
     width: 100%;
     position: absolute;
     top: 0;
     bottom: 0;
+    border:0;
+    font-size: 1rem;
+    font-family: Mulish;
     left: 0;
     right: 0;
     margin-right: 20px;
     z-index: -2;
     padding: 0 50px;
+}
+
+.wrapper input:focus{
+    outline:none;
 }

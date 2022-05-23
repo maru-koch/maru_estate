@@ -1,13 +1,14 @@
-import classes from './propertylisting.module.css'
 import {useState, useEffect} from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import {current_page_listings} from '../../reducers/listingReducer'
+import {current_page_listings} from '../../reducers/listingReducer';
+import classes from './pagination.module.css'
 
 
 
 const Pagination =()=>{
 
-    const {listing} = useSelector(state => state.listings)
+    //const {listing} = useSelector(state => state.listings)
+    const listing =[]
     const dispatch = useDispatch()
     
     const [currentPage, setCurrentPage] = useState(1);
@@ -48,14 +49,14 @@ const Pagination =()=>{
 
 
     return (
-        <main className = {classes.page}>
-            <section className = {classes.listing__pagination}>
-                <div className={classes.row}>
+        <main className = {classes.pagination}>
+            <section className = {classes.pagination__wrapper}>
+                <div className={classes.pagination__row}>
                     <div className={classes.prev_holder}>
                         <button className={classes.prev} onClick ={previousPage}>Prev</button>
                     </div>
                     <div className={classes.page_holder}>
-                        <div className={classes.page}>1</div>
+                        <div className={`${classes.page} ${classes.active}`}>1</div>
                         <div className={classes.page}>2</div>
                         <div className={classes.page}>3</div>
                     </div>

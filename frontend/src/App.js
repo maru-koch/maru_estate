@@ -4,7 +4,7 @@ import Home from '../src/containers/Home'
 import About from '../src/containers/About'
 import Contact from '../src/containers/Contact'
 import ListingDetail from '../src/containers/ListingDetail'
-import Listing from '../src/containers/Listings'
+import Listings from '../src/containers/Listings'
 import Signup from '../src/containers/Signup'
 import Login from '../src/containers/Login'
 import ErrorPage from '../src/containers/errorPage'
@@ -33,7 +33,7 @@ function App() {
               {isAuthenticated?
                <Routes>
                    <Route path ="/dashboard" element = {<Dashboard/>}/>
-                   <Route path ="/listings" element = {<Listing/>}/>
+                   <Route path ="/listings" element = {<Listings/>}/>
                    <Route path = "/listings/:id" element = {<ListingDetail/>}/>
                </Routes>
                :
@@ -41,7 +41,7 @@ function App() {
                   <Route path ="/" element = {<Home/>}/>
                   <Route path ="/about" element = {<About/>}/>
                   <Route path ="/contact" element = {<Contact/>}/>
-                  <Route path ="/listing" element = {<Listing/>}/>
+                  <Route path ="/listings" element = {<Listings/>}/>
                   <Route path = "/listings/:id" element = {<ListingDetail/>}/>
                   <Route path ="signup" element = {<Signup/>}/>
                   <Route path ="/login" element = {<Login/>}/>

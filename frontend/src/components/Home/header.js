@@ -2,7 +2,7 @@ import classes from './header.module.css'
 import land_lord from '../../assets/images/land_lord.png'
 const Header=()=>{
     return (
-        <section>
+        <section className ={classes.header__section}>
             <div className ={classes.header__wrapper}>
                <div className={classes.wave}>
                     <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">

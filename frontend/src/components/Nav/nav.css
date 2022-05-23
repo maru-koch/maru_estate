@@ -1,7 +1,7 @@
 .navBar{
     width: 100vw;
     height: 70px;
-    background-color: var(--background-2-color)
+    background-color: var(--background-color)
 }
 
 .navContainer .logo{

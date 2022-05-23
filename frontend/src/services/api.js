@@ -64,7 +64,7 @@ export const contact_api = async(formData)=>{
     }
 }
 
-export const searc_api = async (formData) => {
+export const search_api = async (formData) => {
     const url = 'http://localhost:8000/api/listings/search'
     try{
         const res = axios.post(url, formData)

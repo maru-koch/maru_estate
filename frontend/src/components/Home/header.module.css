@@ -1,4 +1,4 @@
-section{
+.header__section{
     position: relative;
     width: 100vw;
     height: 600px;
@@ -10,7 +10,7 @@ section{
     position: absolute;
     height: 100%;
     z-index: -1;
-    background-color: var(--background-2-color);
+    background-color: var(--background-color);
 }
 
 .header__wrapper .wave{
