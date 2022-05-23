@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import {current_page_listings} from '../../reducers/listingReducer';
 import classes from './pagination.module.css'
@@ -13,37 +13,47 @@ const Pagination =()=>{
     
     const [currentPage, setCurrentPage] = useState(1);
     const [listingPerPage, setListingPerPage] = useState(6);
-    const [active, setActive] = useState(1);
 
+    const [isActive, setIsActive] = useState(1);
+
+    //
+    const pages = [
+    { id: 1, text: "LI-1" },
+    { id: 2, text: "LI-2" },
+    { id: 3, text: "LI-3" },
+    { id: 4, text: "LI-4" },
+    { id: 5, text: "LI-1" },
+    { id: 6, text: "LI-2" },
+    { id: 7, text: "LI-3" },
+    { id: 8, text: "LI-4" }
+  ];
     //
     const indexOfLastListing = currentPage * listingPerPage
     const indexOfFirstListing = indexOfLastListing - listingPerPage
     const currentListings = listing.slice(indexOfFirstListing, indexOfLastListing)
+
   
     // dispatch is only called when the currentListing is changed
     useEffect(()=>{
         dispatch(current_page_listings(currentListings))
-        setActive(currentPage + 1)
 
     }, [currentListings, currentPage, dispatch])
 
     // to get the previous page
     const previousPage =()=>{
-        if (currentPage >= 1){
-            setCurrentPage(currentPage - 1)
-            setActive(currentPage - 1)
+        if (isActive > 1){
+            setIsActive(isActive - 1)
         }else{
-            setCurrentPage(1)
+            setIsActive(1)
         }
     }
 
     // to get the next page
     const nextPage =()=>{
-        const last_page = Math.ceil(listing.length/listingPerPage)
-        if (currentPage <= last_page ){
-            setCurrentPage(currentPage + 1)
+        if (isActive <=  pages.length-1){
+            setIsActive(isActive + 1)
         }else{
-            setCurrentPage(last_page)
+            setIsActive(pages.length)
         }
     }
 
@@ -55,11 +65,14 @@ const Pagination =()=>{
                     <div className={classes.prev_holder}>
                         <button className={classes.prev} onClick ={previousPage}>Prev</button>
                     </div>
-                    <div className={classes.page_holder}>
-                        <div className={`${classes.page} ${classes.active}`}>1</div>
-                        <div className={classes.page}>2</div>
-                        <div className={classes.page}>3</div>
-                    </div>
+                    <ul className={classes.page_holder}>
+                        {pages.map(page =>
+                            <li onClick={()=>{setIsActive(page.id)}}
+                                className={isActive === page.id? `${classes.page} ${classes.active}` : `${classes.page}`}>
+                                {page.id}
+                            </li>
+                        )}
+                    </ul>
                     <div className={classes.prev_holder}>
                         <button className={classes.next} onClick ={nextPage}>Next</button>
                     </div>

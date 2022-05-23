@@ -9,7 +9,7 @@ const CopyRight=()=>{
                     <img src = "" alt="logo"/>
                 </div> */}
                 <p>&copy; 2022</p>
-                <p> Foodly. All rights reserved. </p>
+                <p> Lettera. All rights reserved. </p>
             </div>
         </div>
     )
