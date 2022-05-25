@@ -21,7 +21,6 @@ const FoodCard =props=>{
             </div>
            
             <ListingMetrics/>
-
             <div className={classes.desc}>
                 <p p className={classes.address}>{props.city}</p>
                 <button className={classes.city}>Details</button>
