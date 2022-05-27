@@ -2,13 +2,19 @@ import Card from '../../UI/card'
 import ListingMetrics from './listingMetrics'
 import classes from './listingCard.module.css'
 import './slantedFoodCard.css'
+import {useNavigate} from 'react-router-dom'
 
 const FoodCard =props=>{
+
+    const navigate = useNavigate()
+
     return (
 
     // displays cards of food on the home page
     // displays image, food name, description, and price
     // user can add to cart
+
+   
     
     <Card style = {`${classes.card} ${props.style}`}>
         <div class = {classes.listingCard}>
@@ -23,7 +29,7 @@ const FoodCard =props=>{
             <ListingMetrics/>
             <div className={classes.desc}>
                 <p p className={classes.address}>{props.city}</p>
-                <button className={classes.city}>Details</button>
+                <button onClick={()=>navigate(`/listings/${1}`)}className={classes.city}>Details</button>
             </div>
         </div>
     </Card>)

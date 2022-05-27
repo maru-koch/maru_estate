@@ -1,0 +1,17 @@
+.realtorProfile{
+    display:grid;
+
+    background-color: black;
+}
+
+.top{
+    background-color:white;
+}
+.middle{
+    background-color:black;
+ 
+}
+
+.bottom{
+    background-color:red;
+}

@@ -1,0 +1,5 @@
+.listingDetail{
+    display: grid;
+    grid-template-columns: 3fr 7fr;
+    background-color: var(--main-2-color)
+}

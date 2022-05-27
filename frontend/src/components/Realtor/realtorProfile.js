@@ -1,3 +1,10 @@
+import RealtorImage from "./realtorImage/realImage"
+import RealtorInfo from './realtorInfo/realtorInfo'
+import RealtorSocialMedia from './realtorSocialMedia/socialMedia'
+import RealtorMetrics from './realtorMetrics/realtorMetrics'
+import Contact from './realtorContact/contact'
+
+import classes from './realtorProfile.module.css'
 
 const RealtorProfile =()=>{
     return (

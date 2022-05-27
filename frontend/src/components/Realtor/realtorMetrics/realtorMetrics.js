@@ -1,5 +1,5 @@
 
-import classes from './vendorMetrics.module.css'
+import classes from './realtorMetrics.module.css'
 import SectionWrapper from '../../../UI/section-wrapper'
 
 const VendorMetrics =()=>{
